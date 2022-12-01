@@ -31,7 +31,7 @@
             "identity": {
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
-                        "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourcegroups/wvdImageDemoRgEurope/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AIBGallerytest": {}
+                        "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourcegroups/wvdImageDemoRgEurope/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AIBGalleryid": {}
                             
                     }
                     },
@@ -41,7 +41,7 @@
 
             "vmProfile": 
                     {
-                    "vmSize": "Standard_B1ms",
+                    "vmSize": "Standard_B2ms",
                     "osDiskSizeGB": 127
                     },
         
@@ -131,7 +131,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourceGroups/wvdImageDemoRgEurope/providers/Microsoft.Compute/galleries/AIBGallery2/images/AIBtest",
+                    "galleryImageId": "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourceGroups/wvdImageDemoRgEurope/providers/Microsoft.Compute/galleries/My_Gallery/images/Virtual_Desktop",
                     "runOutputName": "sigOutput",
                     "artifactTags": {
                         "source": "wvd11",
@@ -149,6 +149,26 @@
     
     ]
 }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
