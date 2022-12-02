@@ -31,7 +31,7 @@
             "identity": {
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
-                        "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourcegroups/wvdImageDemoRg2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AIBGallerytest": {}
+                        "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourcegroups/wvdImageDemoRg2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AIBGalleryid": {}
                             
                     }
                     },
