@@ -73,7 +73,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourceGroups/wvdImageDemoRg2/providers/Microsoft.Compute/galleries/AIBGallery2/images/AIBtest",
+                    "galleryImageId": "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourceGroups/wvdImageDemoRg2/providers/Microsoft.Compute/galleries/My_Gallery/images/Virtual_Desktop",
                     "runOutputName": "sigOutput",
                     "artifactTags": {
                         "source": "wvd11",
