@@ -52,7 +52,14 @@
                     "sku": "win11-22h2-avd",
                     "version": "latest"
             },
-            "customize": [    
+            "customize": [ 
+                    {
+                        "type": "PowerShell",
+                        "name": "CIS2",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/zapocalypse/CIS/main/CIS2.ps1"
+                    },
                     {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Optimizations'",
