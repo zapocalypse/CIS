@@ -138,7 +138,8 @@ $SecPol.'System Access'.PasswordHistorySize = $passwordHistorySize
 #1.1.2 (L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0' (Automated)
 $SecPol.'System Access'.MaximumPasswordAge = $maximumPasswordAge
 
-#1.1.3 (L1) Ensure 'Minimum password age' is set to '1 or more day(s)'(Automated)$SecPol.'System Access'.MinimumPasswordAge = $minimumPasswordAge
+#1.1.3 (L1) Ensure 'Minimum password age' is set to '1 or more day(s)'(Automated)
+$SecPol.'System Access'.MinimumPasswordAge = $minimumPasswordAge
 
 # 1.1.4 (L1) Ensure 'Minimum password length' is set to '14 or more character(s)' (Automated)
 $SecPol.'System Access'.MinimumPasswordLength = $minimumPasswordLength
@@ -149,14 +150,14 @@ $SecPol.'System Access'.PasswordComplexity = "1"
 #1.1.7 (L1) Ensure 'Store passwords using reversible encryption' is set to 'Disabled' (Automated)
 $SecPol.'System Access'.ClearTextPassword = "0"
 
+#1.2.1 (L1) Ensure 'Account lockout duration' is set to '15 or more minute(s)' (Automated)
+$SecPol.'System Access'.LockoutDuration = $($lockoutDurationValue)
+
 #1.2.2 (L1) Ensure 'Account lockout threshold' is set to '5 or fewer invalid logon attempt(s), but not 0' (Automated)
 $SecPol.'System Access'.LockoutBadCount = $($lockoutBadCount)
 
 #1.2.3 (L1) Ensure 'Reset account lockout counter after' is set to '15 or more minute(s)' (Automated)
 $SecPol.'System Access'.ResetLockoutCount = $($resetoLockoutCount)
-
-#1.2.1 (L1) Ensure 'Account lockout duration' is set to '15 or more minute(s)' (Automated)
-$SecPol.'System Access'.LockoutDuration = $($lockoutDurationValue)
 
 #2.3.1.1 (L1) Ensure 'Accounts: Administrator account status' is set to 'Disabled' (Automated)
 $SecPol.'System Access'.EnableAdminAccount = $($enableAdminAccount)
