@@ -90,19 +90,19 @@ checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" "Ma
 #2.3.6.6 (L1) Ensure 'Domain member: Require strong (Windows 2000 or later) session key' is set to 'Enabled' (Automated)
 checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" "RequireStrongKey" 1 DWord
 
-# #2.3.7.1 (L1) Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled' (Automated)
-# checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "DisableCAD" 0 DWord
+#2.3.7.1 (L1) Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled' (Automated)
+checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "DisableCAD" 0 DWord
 
-# #2.3.7.2 (L1) Ensure 'Interactive logon: Don't display last signed-in' is set to 'Enabled' (Automated)
-# checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "DontDisplayLastUserName" 1 DWord
+#2.3.7.2 (L1) Ensure 'Interactive logon: Don't display last signed-in' is set to 'Enabled' (Automated)
+checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "DontDisplayLastUserName" 1 DWord
 
-# #2.3.7.4 (L1) Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0' (Automated)
-# checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "InactivityTimeoutSecs" 900 DWord
+#2.3.7.4 (L1) Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0' (Automated)
+checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "InactivityTimeoutSecs" 900 DWord
 
-# #2.3.7.5 (L1) Configure 'Interactive logon: Message text for users attempting to log on' (Automated)
-# checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "LegalNoticeText" "$($LegalNoticeText)" String
+#2.3.7.5 (L1) Configure 'Interactive logon: Message text for users attempting to log on' (Automated)
+checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "LegalNoticeText" "$($LegalNoticeText)" String
 
-# #2.3.7.6 (L1) Configure 'Interactive logon: Message title for users attempting to log on' (Automated)
+#2.3.7.6 (L1) Configure 'Interactive logon: Message title for users attempting to log on' (Automated)
 # checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "LegalNoticeCaption" "$($LegalNoticeCaption)" String
 
 # #2.3.7.8 (L1) Ensure 'Interactive logon: Prompt user to change password before expiration' is set to 'between 5 and 14 days' (Automated)
