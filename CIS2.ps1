@@ -151,16 +151,16 @@ checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "EveryoneIncludesAno
 checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters" "NullSessionPipes" "" MultiString
 
 #2.3.10.7 (L1) Ensure 'Network access: Remotely accessible registry paths' is configured (Automated)
-checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths" "Machine" ('System\CurrentControlSet\Control\ProductOptions', 'System\CurrentControlSet\Control\Server Applications','Software\Microsoft\Windows NT\CurrentVersion') MultiString
+#checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths" "Machine" ('System\CurrentControlSet\Control\ProductOptions', 'System\CurrentControlSet\Control\Server Applications','Software\Microsoft\Windows NT\CurrentVersion') MultiString
 
 #2.3.10.8 (L1) Ensure 'Network access: Remotely accessible registry paths and sub-paths' is configured (Automated)
-checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths" "Machine" ('System\CurrentControlSet\Control\Print\Printers','System\CurrentControlSet\Services\Eventlog','Software\Microsoft\OLAP Server','Software\Microsoft\Windows NT\CurrentVersion\Print','Software\Microsoft\Windows NT\CurrentVersion\Windows','System\CurrentControlSet\Control\ContentIndex','System\CurrentControlSet\Control\Terminal Server','System\CurrentControlSet\Control\Terminal Server\UserConfig','System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration','Software\Microsoft\Windows NT\CurrentVersion\Perflib','System\CurrentControlSet\Services\SysmonLog') MultiString
+#checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths" "Machine" ('System\CurrentControlSet\Control\Print\Printers','System\CurrentControlSet\Services\Eventlog','Software\Microsoft\OLAP Server','Software\Microsoft\Windows NT\CurrentVersion\Print','Software\Microsoft\Windows NT\CurrentVersion\Windows','System\CurrentControlSet\Control\ContentIndex','System\CurrentControlSet\Control\Terminal Server','System\CurrentControlSet\Control\Terminal Server\UserConfig','System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration','Software\Microsoft\Windows NT\CurrentVersion\Perflib','System\CurrentControlSet\Services\SysmonLog') MultiString
 
 #2.3.10.9 (L1) Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow' (Automated)
 checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters" "RestrictNullSessAccess" 1 DWord
 
 #2.3.10.10 (L1) Ensure 'Network access: Shares that can be accessed anonymously' is set to 'None' (Automated)
-checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "restrictremotesam" 1 DWord
+#checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "restrictremotesam" 1 DWord
 
 #2.3.10.11(L1) Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves' (Automated)
 checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters" "NullSessionShares" "" MultiString
