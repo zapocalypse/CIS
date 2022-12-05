@@ -168,32 +168,32 @@ checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters"
 #2.3.10.12 (L1) Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves' (Automated)
 checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "ForceGuest" 0 DWord
 
-# #2.3.11.1 (L1) Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "UseMachineId" 1 DWord
+#2.3.11.1 (L1) Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "UseMachineId" 1 DWord
 
-# #2.3.11.2 (L1) Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "AllowNullSessionFallback" 0 DWord
+#2.3.11.2 (L1) Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "AllowNullSessionFallback" 0 DWord
 
-# #2.3.11.3 (L1) Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\pku2u" "AllowOnlineID" 0 DWord
+#2.3.11.3 (L1) Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\pku2u" "AllowOnlineID" 0 DWord
 
-# #2.3.11.4 (L1) Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types' (Automated)
-# checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" "SupportedEncryptionTypes" 2147483640 DWord
+#2.3.11.4 (L1) Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types' (Automated)
+checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" "SupportedEncryptionTypes" 2147483640 DWord
 
-# #2.3.11.5 (L1) Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "NoLMHash" 1 DWord
+#2.3.11.5 (L1) Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "NoLMHash" 1 DWord
 
-# #2.3.11.7 (L1) Ensure 'Network security: LAN Manager authentication level' is set to 'Send NTLMv2 response only. Refuse LM & NTLM' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "LmCompatibilityLevel" 5 DWord
+#2.3.11.7 (L1) Ensure 'Network security: LAN Manager authentication level' is set to 'Send NTLMv2 response only. Refuse LM & NTLM' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" "LmCompatibilityLevel" 5 DWord
 
-# #2.3.11.8 (L1) Ensure 'Network security: LDAP client signing requirements' is set to 'Negotiate signing' or higher (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\ldap" "LDAPClientIntegrity" 1 DWord
+#2.3.11.8 (L1) Ensure 'Network security: LDAP client signing requirements' is set to 'Negotiate signing' or higher (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Services\ldap" "LDAPClientIntegrity" 1 DWord
 
-# #2.3.11.9(L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "NtlmMinClientSec" 537395200 DWord
+#2.3.11.9(L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "NtlmMinClientSec" 537395200 DWord
 
-# #2.3.11.10(L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "NtlmMinServerSec" 537395200 DWord
+#2.3.11.10(L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "NtlmMinServerSec" 537395200 DWord
 
 # #2.3.15.1 (L1) Ensure 'System objects: Require case insensitivity for non-Windows subsystems' is set to 'Enabled' (Automa
 # checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel" "ObCaseInsensitive" 1 DWord
