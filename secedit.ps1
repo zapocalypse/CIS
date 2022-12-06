@@ -150,20 +150,20 @@ $SecPol.'System Access'.PasswordComplexity = "1"
 #1.1.7 (L1) Ensure 'Store passwords using reversible encryption' is set to 'Disabled' (Automated)
 $SecPol.'System Access'.ClearTextPassword = "0"
 
-# #1.2.1 (L1) Ensure 'Account lockout duration' is set to '15 or more minute(s)' (Automated)
-# $SecPol.'System Access'.LockoutDuration = $($lockoutDurationValue)
+#1.2.1 (L1) Ensure 'Account lockout duration' is set to '15 or more minute(s)' (Automated)
+$SecPol.'System Access'.LockoutDuration = $($lockoutDurationValue)
 
-# #1.2.2 (L1) Ensure 'Account lockout threshold' is set to '5 or fewer invalid logon attempt(s), but not 0' (Automated)
-# $SecPol.'System Access'.LockoutBadCount = $($lockoutBadCount)
+#1.2.2 (L1) Ensure 'Account lockout threshold' is set to '5 or fewer invalid logon attempt(s), but not 0' (Automated)
+$SecPol.'System Access'.LockoutBadCount = $($lockoutBadCount)
 
-# #1.2.3 (L1) Ensure 'Reset account lockout counter after' is set to '15 or more minute(s)' (Automated)
-# $SecPol.'System Access'.ResetLockoutCount = $($resetoLockoutCount)
+#1.2.3 (L1) Ensure 'Reset account lockout counter after' is set to '15 or more minute(s)' (Automated)
+$SecPol.'System Access'.ResetLockoutCount = $($resetoLockoutCount)
 
-# #2.3.1.1 (L1) Ensure 'Accounts: Administrator account status' is set to 'Disabled' (Automated)
-# $SecPol.'System Access'.EnableAdminAccount = $($enableAdminAccount)
+#2.3.1.1 (L1) Ensure 'Accounts: Administrator account status' is set to 'Disabled' (Automated)
+$SecPol.'System Access'.EnableAdminAccount = $($enableAdminAccount)
 
-# #2.3.1.3 (L1) Ensure 'Accounts: Guest account status' is set to 'Disabled' (Automated)
-# $SecPol.'System Access'.EnableGuestAccount = $($enableGuestAccount)
+#2.3.1.3 (L1) Ensure 'Accounts: Guest account status' is set to 'Disabled' (Automated)
+$SecPol.'System Access'.EnableGuestAccount = $($enableGuestAccount)
 
 # #2.2.1 (L1) Ensure 'Access Credential Manager as a trusted caller' is set to 'No One' (Automated)
 # #$secPol.'Privilege Rights'.SeTrustedCredManAccessPrivilege = "[]" Must be empty, can be skipped.
