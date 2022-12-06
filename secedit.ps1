@@ -165,20 +165,20 @@ $SecPol.'System Access'.EnableAdminAccount = $($enableAdminAccount)
 #2.3.1.3 (L1) Ensure 'Accounts: Guest account status' is set to 'Disabled' (Automated)
 $SecPol.'System Access'.EnableGuestAccount = $($enableGuestAccount)
 
-# #2.2.1 (L1) Ensure 'Access Credential Manager as a trusted caller' is set to 'No One' (Automated)
-# #$secPol.'Privilege Rights'.SeTrustedCredManAccessPrivilege = "[]" Must be empty, can be skipped.
+#2.2.1 (L1) Ensure 'Access Credential Manager as a trusted caller' is set to 'No One' (Automated)
+#$secPol.'Privilege Rights'.SeTrustedCredManAccessPrivilege = "[]" Must be empty, can be skipped.
 
-# #2.2.2 (L1) Ensure 'Access this computer from the network' is set to 'Administrators, Remote Desktop Users' (Automated)
-# $secPol.'Privilege Rights'.SeNetworkLogonRight = "Administrators, Remote Desktop Users"
+#2.2.2 (L1) Ensure 'Access this computer from the network' is set to 'Administrators, Remote Desktop Users' (Automated)
+$secPol.'Privilege Rights'.SeNetworkLogonRight = "Administrators, Remote Desktop Users"
 
-# #2.2.3 (L1) Ensure 'Act as part of the operating system' is set to 'No One' (Automated)
-# #$secPol.'Privilege Rights'.SeTcbPrivilege = "[]" must be empty, can be skipped
+#2.2.3 (L1) Ensure 'Act as part of the operating system' is set to 'No One' (Automated)
+#$secPol.'Privilege Rights'.SeTcbPrivilege = "[]" must be empty, can be skipped
 
-# #2.2.4 (L1) Ensure 'Adjust memory quotas for a process' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE' (Automated)
-# $secPol.'Privilege Rights'.SeIncreaseQuotaPrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE"
+#2.2.4 (L1) Ensure 'Adjust memory quotas for a process' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE' (Automated)
+$secPol.'Privilege Rights'.SeIncreaseQuotaPrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE"
 
-# #2.2.5 (L1) Ensure 'Allow log on locally' is set to 'Administrators, Users' (Automated)
-# $secPol.'Privilege Rights'.SeInteractiveLogonRight = "Administrators, Users"
+#2.2.5 (L1) Ensure 'Allow log on locally' is set to 'Administrators, Users' (Automated)
+$secPol.'Privilege Rights'.SeInteractiveLogonRight = "Administrators, Users"
 
 # #2.2.6 (L1) Ensure 'Allow log on through Remote Desktop Services' is set to 'Administrators, Remote Desktop Users'
 # $secPol.'Privilege Rights'.SeRemoteInteractiveLogonRight = "Administrators, Users"
