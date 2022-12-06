@@ -195,11 +195,11 @@ checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "NtlmMinClien
 #2.3.11.10(L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption' (Automated)
 checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" "NtlmMinServerSec" 537395200 DWord
 
-# #2.3.15.1 (L1) Ensure 'System objects: Require case insensitivity for non-Windows subsystems' is set to 'Enabled' (Automa
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel" "ObCaseInsensitive" 1 DWord
+#2.3.15.1 (L1) Ensure 'System objects: Require case insensitivity for non-Windows subsystems' is set to 'Enabled' (Automa
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel" "ObCaseInsensitive" 1 DWord
 
-# #2.3.15.2 (L1) Ensure 'System objects: Strengthen default permissions of internal system objects (e.g. Symbolic Links)' is set to 'Enabled' (Automated)
-# checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager" "ProtectionMode" 1 DWord
+#2.3.15.2 (L1) Ensure 'System objects: Strengthen default permissions of internal system objects (e.g. Symbolic Links)' is set to 'Enabled' (Automated)
+checkForRegKey "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager" "ProtectionMode" 1 DWord
 
 # #2.3.17.1 (L1) Ensure 'User Account Control: Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled' (Automated)
 # checkForRegKey "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "FilterAdministratorToken" 1 DWord
