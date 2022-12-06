@@ -180,20 +180,20 @@ $secPol.'Privilege Rights'.SeIncreaseQuotaPrivilege = "Administrators, LOCAL SER
 #2.2.5 (L1) Ensure 'Allow log on locally' is set to 'Administrators, Users' (Automated)
 $secPol.'Privilege Rights'.SeInteractiveLogonRight = "Administrators, Users"
 
-# #2.2.6 (L1) Ensure 'Allow log on through Remote Desktop Services' is set to 'Administrators, Remote Desktop Users'
-# $secPol.'Privilege Rights'.SeRemoteInteractiveLogonRight = "Administrators, Users"
+#2.2.6 (L1) Ensure 'Allow log on through Remote Desktop Services' is set to 'Administrators, Remote Desktop Users'
+$secPol.'Privilege Rights'.SeRemoteInteractiveLogonRight = "Administrators, Users"
 
-# #2.2.7 (L1) Ensure 'Back up files and directories' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeBackupPrivilege = "Administrators" 
+#2.2.7 (L1) Ensure 'Back up files and directories' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeBackupPrivilege = "Administrators" 
 
-# #2.2.8 (L1) Ensure 'Change the system time' is set to 'Administrators, LOCAL SERVICE' (Automated)
-# $secPol.'Privilege Rights'.SeSystemtimePrivilege = "Administrators, LOCAL SERVICE"
+#2.2.8 (L1) Ensure 'Change the system time' is set to 'Administrators, LOCAL SERVICE' (Automated)
+$secPol.'Privilege Rights'.SeSystemtimePrivilege = "Administrators, LOCAL SERVICE"
 
-# #2.2.9 (L1) Ensure 'Change the time zone' is set to 'Administrators, LOCAL SERVICE, Users' (Automated)
-# $secPol.'Privilege Rights'.SeTimeZonePrivilege = " Administrators, LOCAL SERVICE, Users" 
+#2.2.9 (L1) Ensure 'Change the time zone' is set to 'Administrators, LOCAL SERVICE, Users' (Automated)
+$secPol.'Privilege Rights'.SeTimeZonePrivilege = " Administrators, LOCAL SERVICE, Users" 
 
-# #2.2.10 (L1) Ensure 'Create a pagefile' is set to 'Administrators' (Automated)
-# #$secPol.'Privilege Rights'.SeCreatePageFilePrivilege = "Adminstrators" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.10 (L1) Ensure 'Create a pagefile' is set to 'Administrators' (Automated)
+#$secPol.'Privilege Rights'.SeCreatePageFilePrivilege = "Adminstrators" #Doesn't work, due to this value being absent from secedit cfg
  
 # #2.2.11 (L1) Ensure 'Create a token object' is set to 'No One' (Automated) 
 # #$secPol.'Privilege Rights'.SeCreateTokenPrivilege = "[]" #must be empty, can be skipped
