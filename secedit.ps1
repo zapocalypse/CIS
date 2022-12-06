@@ -135,20 +135,20 @@ example: $SecPol.'System Access'.PasswordHistorySize = 10
 #1.1.1 (L1) Ensure 'Enforce password history' is set to '24 or more password(s)' (Automated)
 $SecPol.'System Access'.PasswordHistorySize = $passwordHistorySize
 
-# #1.1.2 (L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0' (Automated)
-# $SecPol.'System Access'.MaximumPasswordAge = $maximumPasswordAge
+#1.1.2 (L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0' (Automated)
+$SecPol.'System Access'.MaximumPasswordAge = $maximumPasswordAge
 
-# #1.1.3 (L1) Ensure 'Minimum password age' is set to '1 or more day(s)'(Automated)
-# $SecPol.'System Access'.MinimumPasswordAge = $minimumPasswordAge
+#1.1.3 (L1) Ensure 'Minimum password age' is set to '1 or more day(s)'(Automated)
+$SecPol.'System Access'.MinimumPasswordAge = $minimumPasswordAge
 
-# # 1.1.4 (L1) Ensure 'Minimum password length' is set to '14 or more character(s)' (Automated)
-# $SecPol.'System Access'.MinimumPasswordLength = $minimumPasswordLength
+# 1.1.4 (L1) Ensure 'Minimum password length' is set to '14 or more character(s)' (Automated)
+$SecPol.'System Access'.MinimumPasswordLength = $minimumPasswordLength
 
-# #1.1.5 (L1) Ensure 'Password must meet complexity requirements' is set to 'Enabled' (Automated)
-# $SecPol.'System Access'.PasswordComplexity = "1"
+#1.1.5 (L1) Ensure 'Password must meet complexity requirements' is set to 'Enabled' (Automated)
+$SecPol.'System Access'.PasswordComplexity = "1"
 
-# #1.1.7 (L1) Ensure 'Store passwords using reversible encryption' is set to 'Disabled' (Automated)
-# $SecPol.'System Access'.ClearTextPassword = "0"
+#1.1.7 (L1) Ensure 'Store passwords using reversible encryption' is set to 'Disabled' (Automated)
+$SecPol.'System Access'.ClearTextPassword = "0"
 
 # #1.2.1 (L1) Ensure 'Account lockout duration' is set to '15 or more minute(s)' (Automated)
 # $SecPol.'System Access'.LockoutDuration = $($lockoutDurationValue)
