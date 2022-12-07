@@ -205,7 +205,7 @@ $secPol.'Privilege Rights'.SeCreateGlobalPrivilege = "Administrators, LOCAL SERV
 #$secPol.'Privilege Rights'.SeCreatePermanentPrivilege ="[]" #must be empty, can be skipped
 
 #2.2.14 (L1) Configure 'Create symbolic links' (Automated)
-#$secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT VIRTUAL MACHINE\Virtual Machines"
+$secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT VIRTUAL MACHINE\Virtual Machines"
 
 #2.2.15 (L1) Ensure 'Debug programs' is set to 'Administrators' (Automated)
 #$secPol.'Privilege Rights'.SeDebugPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
