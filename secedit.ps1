@@ -217,7 +217,7 @@ $secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT V
 #$secPol.'Privilege Rights'.SeDenyServiceLogonRight = "Guests" #Doesn't work, due to this value being absent from secedit cfg
 
 #2.2.19 (L1) Ensure 'Deny log on locally' to include 'Guests' (Automated)
-#$secPol.'Privilege Rights'.SeDenyInteractiveLogonRight = "Guests" #Value does not exists during Azure image build. Causes the build to fail.
+$secPol.'Privilege Rights'.SeDenyInteractiveLogonRight = "Guests" #Value does not exists during Azure image build. Causes the build to fail.
 
 #2.2.20 (L1) Ensure 'Deny log on through Remote Desktop Services' to include 'Guests, Local account' (Automated)
 #$secPol.'Privilege Rights'.SeDenyRemoteInteractiveLogonRight = "Guests, Local account" #Doesn't work, due to this value being absent from secedit cfg
