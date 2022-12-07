@@ -199,7 +199,7 @@ $secPol.'Privilege Rights'.SeTimeZonePrivilege = " Administrators, LOCAL SERVICE
 #$secPol.'Privilege Rights'.SeCreateTokenPrivilege = "[]" #must be empty, can be skipped
 
 #2.2.12 (L1) Ensure 'Create global objects' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' (Automated)
-#$secPol.'Privilege Rights'.SeCreateGlobalPrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE"
+$secPol.'Privilege Rights'.SeCreateGlobalPrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE"
 
 #2.2.13 (L1) Ensure 'Create permanent shared objects' is set to 'No One' (Automated)
 #$secPol.'Privilege Rights'.SeCreatePermanentPrivilege ="[]" #must be empty, can be skipped
