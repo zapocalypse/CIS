@@ -195,20 +195,20 @@ $secPol.'Privilege Rights'.SeTimeZonePrivilege = " Administrators, LOCAL SERVICE
 #2.2.10 (L1) Ensure 'Create a pagefile' is set to 'Administrators' (Automated)
 #$secPol.'Privilege Rights'.SeCreatePageFilePrivilege = "Adminstrators" #Doesn't work, due to this value being absent from secedit cfg
  
-# #2.2.11 (L1) Ensure 'Create a token object' is set to 'No One' (Automated) 
-# #$secPol.'Privilege Rights'.SeCreateTokenPrivilege = "[]" #must be empty, can be skipped
+#2.2.11 (L1) Ensure 'Create a token object' is set to 'No One' (Automated) 
+#$secPol.'Privilege Rights'.SeCreateTokenPrivilege = "[]" #must be empty, can be skipped
 
-# #2.2.12 (L1) Ensure 'Create global objects' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' (Automated)
-# $secPol.'Privilege Rights'.SeCreateGlobalPrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE"
+#2.2.12 (L1) Ensure 'Create global objects' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' (Automated)
+$secPol.'Privilege Rights'.SeCreateGlobalPrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE"
 
-# #2.2.13 (L1) Ensure 'Create permanent shared objects' is set to 'No One' (Automated)
-# #$secPol.'Privilege Rights'.SeCreatePermanentPrivilege ="[]" #must be empty, can be skipped
+#2.2.13 (L1) Ensure 'Create permanent shared objects' is set to 'No One' (Automated)
+#$secPol.'Privilege Rights'.SeCreatePermanentPrivilege ="[]" #must be empty, can be skipped
 
-# #2.2.14 (L1) Configure 'Create symbolic links' (Automated)
-# $secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT VIRTUAL MACHINE\Virtual Machines"
+#2.2.14 (L1) Configure 'Create symbolic links' (Automated)
+$secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT VIRTUAL MACHINE\Virtual Machines"
 
-# #2.2.15 (L1) Ensure 'Debug programs' is set to 'Administrators' (Automated)
-# #$secPol.'Privilege Rights'.SeDebugPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.15 (L1) Ensure 'Debug programs' is set to 'Administrators' (Automated)
+#$secPol.'Privilege Rights'.SeDebugPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
 
 # #2.2.17 (L1) Ensure 'Deny log on as a batch job' to include 'Guests' (Automated)
 # #$secPol.'Privilege Rights'.SeDenyBatchLogonRight = "Guests" #Doesn't work, due to this value being absent from secedit cfg
