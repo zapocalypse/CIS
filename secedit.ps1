@@ -205,73 +205,73 @@ $secPol.'Privilege Rights'.SeCreateGlobalPrivilege = "Administrators, LOCAL SERV
 #$secPol.'Privilege Rights'.SeCreatePermanentPrivilege ="[]" #must be empty, can be skipped
 
 #2.2.14 (L1) Configure 'Create symbolic links' (Automated)
-$secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT VIRTUAL MACHINE\Virtual Machines"
+#$secPol.'Privilege Rights'.SeCreateSymbolicLinkPrivilege = "Administrators, NT VIRTUAL MACHINE\Virtual Machines" #causes image build to fail
 
 #2.2.15 (L1) Ensure 'Debug programs' is set to 'Administrators' (Automated)
 #$secPol.'Privilege Rights'.SeDebugPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.17 (L1) Ensure 'Deny log on as a batch job' to include 'Guests' (Automated)
-# #$secPol.'Privilege Rights'.SeDenyBatchLogonRight = "Guests" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.17 (L1) Ensure 'Deny log on as a batch job' to include 'Guests' (Automated)
+#$secPol.'Privilege Rights'.SeDenyBatchLogonRight = "Guests" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.18 (L1) Ensure 'Deny log on as a service' to include 'Guests' (Automated)
-# #$secPol.'Privilege Rights'.SeDenyServiceLogonRight = "Guests" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.18 (L1) Ensure 'Deny log on as a service' to include 'Guests' (Automated)
+#$secPol.'Privilege Rights'.SeDenyServiceLogonRight = "Guests" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.19 (L1) Ensure 'Deny log on locally' to include 'Guests' (Automated)
-# #$secPol.'Privilege Rights'.SeDenyInteractiveLogonRight = "Guests" #Value does not exists during Azure image build. Causes the build to fail.
+#2.2.19 (L1) Ensure 'Deny log on locally' to include 'Guests' (Automated)
+#$secPol.'Privilege Rights'.SeDenyInteractiveLogonRight = "Guests" #Value does not exists during Azure image build. Causes the build to fail.
 
-# #2.2.20 (L1) Ensure 'Deny log on through Remote Desktop Services' to include 'Guests, Local account' (Automated)
-# #$secPol.'Privilege Rights'.SeDenyRemoteInteractiveLogonRight = "Guests, Local account" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.20 (L1) Ensure 'Deny log on through Remote Desktop Services' to include 'Guests, Local account' (Automated)
+#$secPol.'Privilege Rights'.SeDenyRemoteInteractiveLogonRight = "Guests, Local account" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.21 (L1) Ensure 'Enable computer and user accounts to be trusted for delegation' is set to 'No One' (Automated)
-# #$secPol.'Privilege Rights'.SeEnableDelegationPrivilege = "[]" #Doesn't work, due to this value being absent from secedit cfg, must be empty can be skipped.
+#2.2.21 (L1) Ensure 'Enable computer and user accounts to be trusted for delegation' is set to 'No One' (Automated)
+#$secPol.'Privilege Rights'.SeEnableDelegationPrivilege = "[]" #Doesn't work, due to this value being absent from secedit cfg, must be empty can be skipped.
 
-# #2.2.22 (L1) Ensure 'Force shutdown from a remote system' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeRemoteShutdownPrivilege = "Administrators"
+#2.2.22 (L1) Ensure 'Force shutdown from a remote system' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeRemoteShutdownPrivilege = "Administrators"
 
-# #2.2.23 (L1) Ensure 'Generate security audits' is set to 'LOCAL SERVICE, NETWORK SERVICE' (Automated)
-# $secPol.'Privilege Rights'.SeAuditPrivilege = "LOCAL SERVICE, NETWORK SERVICE"
+#2.2.23 (L1) Ensure 'Generate security audits' is set to 'LOCAL SERVICE, NETWORK SERVICE' (Automated)
+$secPol.'Privilege Rights'.SeAuditPrivilege = "LOCAL SERVICE, NETWORK SERVICE"
 
-# #2.2.24 (L1) Ensure 'Impersonate a client after authentication' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' (Automated)
-# $secPol.'Privilege Rights'.SeImpersonatePrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE"
+#2.2.24 (L1) Ensure 'Impersonate a client after authentication' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' (Automated)
+$secPol.'Privilege Rights'.SeImpersonatePrivilege = "Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE"
 
-# #2.2.25 (L1) Ensure 'Increase scheduling priority' is set to 'Administrators, Window Manager\Window Manager Group' (Automated
-# $secPol.'Privilege Rights'.SeIncreaseBasePriorityPrivilege = "Administrators, Window Manager\Window Manager Group"
+#2.2.25 (L1) Ensure 'Increase scheduling priority' is set to 'Administrators, Window Manager\Window Manager Group' (Automated
+$secPol.'Privilege Rights'.SeIncreaseBasePriorityPrivilege = "Administrators, Window Manager\Window Manager Group"
 
-# #2.2.26 (L1) Ensure 'Load and unload device drivers' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeLoadDriverPrivilege = "Administrators"
+#2.2.26 (L1) Ensure 'Load and unload device drivers' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeLoadDriverPrivilege = "Administrators"
 
-# #2.2.27 (L1) Ensure 'Lock pages in memory' is set to 'No One' (Automated)
-# #$secPol.'Privilege Rights'.SeLockMemoryPrivilege = "[]" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.27 (L1) Ensure 'Lock pages in memory' is set to 'No One' (Automated)
+#$secPol.'Privilege Rights'.SeLockMemoryPrivilege = "[]" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.30 (L1) Ensure 'Manage auditing and security log' is set to 'Administrators' (Automated)
-# #$secPol.'Privilege Rights'.SeSecurityPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.30 (L1) Ensure 'Manage auditing and security log' is set to 'Administrators' (Automated)
+#$secPol.'Privilege Rights'.SeSecurityPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.31 (L1) Ensure 'Modify an object label' is set to 'No One' (Automated)
-# #$secPol.'Privilege Rights'.SeSecurityPrivilege = "[]" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.31 (L1) Ensure 'Modify an object label' is set to 'No One' (Automated)
+#$secPol.'Privilege Rights'.SeSecurityPrivilege = "[]" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.32 (L1) Ensure 'Modify firmware environment values' is set to 'Administrators' (Automated)
-# #$secPol.'Privilege Rights'.SeRelabelPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
+#2.2.32 (L1) Ensure 'Modify firmware environment values' is set to 'Administrators' (Automated)
+#$secPol.'Privilege Rights'.SeRelabelPrivilege = "Administrators" #Doesn't work, due to this value being absent from secedit cfg
 
-# #2.2.33 (L1) Ensure 'Perform volume maintenance tasks' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeSystemEnvironmentPrivilege = "Administrators"
+#2.2.33 (L1) Ensure 'Perform volume maintenance tasks' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeSystemEnvironmentPrivilege = "Administrators"
 
-# #2.2.34 (L1) Ensure 'Profile single process' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeManageVolumePrivilege = "Administrators"
+#2.2.34 (L1) Ensure 'Profile single process' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeManageVolumePrivilege = "Administrators"
 
-# #2.2.35 (L1) Ensure 'Profile system performance' is set to 'Administrators, NT SERVICE\WdiServiceHost' (Automated)
-# $secPol.'Privilege Rights'.SeProfileSingleProcessPrivilege = "Administrators, NT SERVICE\WdiServiceHost"
+#2.2.35 (L1) Ensure 'Profile system performance' is set to 'Administrators, NT SERVICE\WdiServiceHost' (Automated)
+$secPol.'Privilege Rights'.SeProfileSingleProcessPrivilege = "Administrators, NT SERVICE\WdiServiceHost"
 
-# #2.2.36 (L1) Ensure 'Replace a process level token' is set to 'LOCAL SERVICE, NETWORK SERVICE' (Automated)
-# $secPol.'Privilege Rights'.SeAssignPrimaryTokenPrivilege = "LOCAL SERVICE, NETWORK SERVICE"
+#2.2.36 (L1) Ensure 'Replace a process level token' is set to 'LOCAL SERVICE, NETWORK SERVICE' (Automated)
+$secPol.'Privilege Rights'.SeAssignPrimaryTokenPrivilege = "LOCAL SERVICE, NETWORK SERVICE"
 
-# #2.2.37 (L1) Ensure 'Restore files and directories' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeRestorePrivilege = "Administrators"
+#2.2.37 (L1) Ensure 'Restore files and directories' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeRestorePrivilege = "Administrators"
 
-# #2.2.38 (L1) Ensure 'Shut down the system' is set to 'Administrators, Users' (Automated)
-# $secPol.'Privilege Rights'.SeShutdownPrivilege = "Administrators, Users"
+#2.2.38 (L1) Ensure 'Shut down the system' is set to 'Administrators, Users' (Automated)
+$secPol.'Privilege Rights'.SeShutdownPrivilege = "Administrators, Users"
 
-# #2.2.39 (L1) Ensure 'Take ownership of files or other objects' is set to 'Administrators' (Automated)
-# $secPol.'Privilege Rights'.SeTakeOwnershipPrivilege = "Administrators"
+#2.2.39 (L1) Ensure 'Take ownership of files or other objects' is set to 'Administrators' (Automated)
+$secPol.'Privilege Rights'.SeTakeOwnershipPrivilege = "Administrators"
 
 
 <#
