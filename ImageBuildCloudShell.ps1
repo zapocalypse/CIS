@@ -1,15 +1,29 @@
-﻿#https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/14_Building_Images_WVD
+#This configuration is bases on the documentation of the githubpage:
+#https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/14_Building_Images_WVD
+
+# Register for Azure Image Builder Feature
+Register-AzProviderFeature -FeatureName VirtualMachineTemplatePreview -ProviderNamespace Microsoft.VirtualMachineImages
+
+Get-AzProviderFeature -FeatureName VirtualMachineTemplatePreview -ProviderNamespace Microsoft.VirtualMachineImages
+# wait until RegistrationState is set to 'Registered'
+
+#Register required providers
+Register-AzResourceProvider -ProviderNamespace Microsoft.VirtualMachineImages
+Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
+Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
+Register-AzResourceProvider -ProviderNamespace Microsoft.KeyVault
+Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 
 
 #Step 1: Set up environment and variables
-# Step 1: Import module
+# Import module
 Import-Module Az.Accounts
 
-# Step 2: get existing context
+# get existing context
 $currentAzContext = Get-AzContext
 
 # destination image resource group
-$imageResourceGroup="wvdImageDemoRgEurope"
+$imageResourceGroup="wvd11rg"
 
 # location (see possible locations in main docs)
 $location="westeurope"
@@ -18,10 +32,10 @@ $location="westeurope"
 $subscriptionID=$currentAzContext.Subscription.Id
 
 # image template name
-$imageTemplateName="wvd11ImageTemplateCIS2"
+$imageTemplateName="wvd11"
 
 # distribution properties object name (runOutput), i.e. this gives you the properties of the managed image on completion
-$runOutputName="sigOutput"
+$runOutputName="computeGalleryOutput"
 
 # create resource group
 New-AzResourceGroup -Name $imageResourceGroup -Location $location
@@ -57,6 +71,7 @@ Invoke-WebRequest -Uri $aibRoleImageCreationUrl -OutFile $aibRoleImageCreationPa
 
 # create role definition
 New-AzRoleDefinition -InputFile  ./aibRoleImageCreation.json
+
 #wait until the role definition and its persmission are created before continuing. This can take a few minutes.
 
 # grant role definition to image builder service principal
@@ -76,52 +91,13 @@ New-AzGallery -GalleryName $sigGalleryName -ResourceGroupName $imageResourceGrou
 New-AzGalleryImageDefinition -GalleryName $sigGalleryName -ResourceGroupName $imageResourceGroup -Location $location -Name $imageDefName -OsState generalized -OsType Windows -Publisher $publisher -Offer 'Windows' -Sku '11wvd' -HyperVGeneration 'V2'
 
 #Download template and configure and make your changes to the template
-$templateUrl="https://raw.githubusercontent.com/zapocalypse/CIS/main/windows11avd.json"
-$templateFilePath = "armTemplateWVD.json"
+$templateUrl="https://raw.githubusercontent.com/zapocalypse/CIS/main/windows11_wvd_cis_hardening.json"
+$templateFilePath = "windows11_wvd_cis_hardening.json"
 
 Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
 
-((Get-Content -path $templateFilePath -Raw) -replace '<subscriptionID>',$subscriptionID) | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace '<rgName>',$imageResourceGroup) | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace '<region>',$location) | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace '<runOutputName>',$runOutputName) | Set-Content -Path $templateFilePath
-
-((Get-Content -path $templateFilePath -Raw) -replace '<imageDefName>',$imageDefName) | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace '<sharedImageGalName>',$sigGalleryName) | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace '<region1>',$location) | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace '<imgBuilderId>',$identityNameResourceId) | Set-Content -Path $templateFilePath
-
-#replace template values
-((Get-Content -path $templateFilePath -Raw) -replace "windows-10","windows-11") | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace "windows10","windows11") | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace "20h1-ent","win11-22h2-avd") | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace "wvd10","wvd11") | Set-Content -Path $templateFilePath
-((Get-Content -path $templateFilePath -Raw) -replace "Standard_D2_v2","Standard_B2ms") | Set-Content -Path $templateFilePath
-
-
-#Submit the template
+ #Submit the template
 New-AzResourceGroupDeployment -ResourceGroupName $imageResourceGroup -TemplateFile $templateFilePath -api-version "2022-02-14" -imageTemplateName $imageTemplateName -svclocation $location
 
 #Build the image
 Start-AzImageBuilderTemplate -Name $imageTemplateName -ResourceGroupName $imageResourceGroup  -NoWait
-
-
-
-Get-AzVMImagePublisher -Location $location | Select PublisherName
-
-$pubName="MicrosoftWindowsDesktop"
-Get-AzVMImageOffer -Location $location -PublisherName $pubName | Select Offer
-
-$offerName="windows-11"
-Get-AzVMImageSku -Location $location -PublisherName $pubName -Offer $offerName | Select Skus
-
-Get-AzVMImageSku -Location germanywestcentral -PublisherName MicrosoftWindowsDesktop -Offer windows-11 | Select Skus
-
-#The provided SIG: /subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourceGroups/wvdImageDemoRg2/providers/Microsoft.Compute/galleries/AIBGallery2/images/AIBtest, has a different Hyper-V Generation: V1, than source image: V2. (Code:ValidationFailed)
-#CorrelationId: 8a6d22c6-ff42-4823-9e2b-23a1affb3e60
-
-#For image build failures, you can get the error from the 'lastrunstatus', and then review the details in the customization.log.
-
-az resource show  --resource-group $imageResourceGroup  --resource-type Microsoft.VirtualMachineImages/imageTemplates -n $imageTemplateName
-
-Register-AzResourceProvider -ProviderNamespace Microsoft.Network
