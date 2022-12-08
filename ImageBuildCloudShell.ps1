@@ -1,4 +1,4 @@
-#This configuration is bases on the documentation of the githubpage:
+#This configuration is based on the documentation of the githubpage:
 #https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/14_Building_Images_WVD
 
 # Register for Azure Image Builder Feature
