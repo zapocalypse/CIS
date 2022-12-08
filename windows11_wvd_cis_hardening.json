@@ -116,7 +116,7 @@
                     },
                     {
                         "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post Optimizations'",
+                        "restartCheckCommand": "write-host 'restarting post CIS-scripts install'",
                         "restartTimeout": "5m"
                     },                      
                     {
