@@ -19,8 +19,8 @@ Variables used in this script.
 
 These variables define the legal text displayed to every user before logging in.
 #>
-$LegalNoticeCaption  = "LET OP!"
-$LegalNoticeText = "Deze computer is eigendom van PinkRoccade Cloud Solutions, ongeautoriseerde toegang is verboden!"
+$LegalNoticeCaption  = ""
+$LegalNoticeText = ""
 
 
 <#
