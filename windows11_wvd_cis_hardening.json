@@ -134,7 +134,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/1b4cc42d-e82b-4930-86e3-1651c242ba05/resourceGroups/wvdImageDemoRgEurope/providers/Microsoft.Compute/galleries/My_Gallery/images/Virtual_Desktop",
+                    "galleryImageId": "/subscriptions/<subscription_id>/resourceGroups/wvdImageDemoRgEurope/providers/Microsoft.Compute/galleries/My_Gallery/images/Virtual_Desktop",
                     "runOutputName": "sigOutput",
                     "artifactTags": {
                         "source": "wvd11",
