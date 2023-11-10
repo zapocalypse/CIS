@@ -96,7 +96,10 @@ $templateFilePath = "windows11_wvd_cis_hardening.json"
 
 Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
 ((Get-Content -path $templateFilePath -Raw) -replace '<subscription_id>',$subscriptionID) | Set-Content -Path $templateFilePath
+((Get-Content -path $templateFilePath -Raw) -replace '<resource_group>',$imageResourceGroup) | Set-Content -Path $templateFilePath
+((Get-Content -path $templateFilePath -Raw) -replace '<AIBGalleryid>',$identityName) | Set-Content -Path $templateFilePath
 ((Get-Content -path $templateFilePath -Raw) -replace '<GalleryName>',$sigGalleryName) | Set-Content -Path $templateFilePath
+((Get-Content -path $templateFilePath -Raw) -replace '<imageDef>',$imageDefName) | Set-Content -Path $templateFilePath
 
 
  #Submit the template
