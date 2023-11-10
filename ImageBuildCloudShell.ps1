@@ -26,7 +26,7 @@ $currentAzContext = Get-AzContext
 $imageResourceGroup="wvd11rg"
 
 # location (see possible locations in main docs)
-$location="westeurope"
+$location="eastus"
 
 # your subscription, this will get your current subscription
 $subscriptionID=$currentAzContext.Subscription.Id
@@ -81,9 +81,9 @@ New-AzRoleAssignment -ObjectId $identityNamePrincipalId -RoleDefinitionName $ima
 #Step 3 : Create the Shared Image Gallery
 $sigGalleryName= "My_Gallery"
 $imageDefName ="Virtual_Desktop"
-$publisher = "Pink"
+$publisher = "pub"
 
-# create gallery. This can take a few minutes.
+# create gallery. This can take a few minutes. 
 New-AzGallery -GalleryName $sigGalleryName -ResourceGroupName $imageResourceGroup -Location $location
 
 
@@ -95,6 +95,9 @@ $templateUrl="https://raw.githubusercontent.com/zapocalypse/CIS/main/windows11_w
 $templateFilePath = "windows11_wvd_cis_hardening.json"
 
 Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
+((Get-Content -path $templateFilePath -Raw) -replace '<subscription_id>',$subscriptionID) | Set-Content -Path $templateFilePath
+((Get-Content -path $templateFilePath -Raw) -replace '<GalleryName>',$sigGalleryName) | Set-Content -Path $templateFilePath
+
 
  #Submit the template
 New-AzResourceGroupDeployment -ResourceGroupName $imageResourceGroup -TemplateFile $templateFilePath -api-version "2022-02-14" -imageTemplateName $imageTemplateName -svclocation $location
