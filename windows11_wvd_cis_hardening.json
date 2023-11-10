@@ -31,7 +31,7 @@
             "identity": {
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
-                        "/subscriptions/<subscription_id>/resourcegroups/wvdImageDemoRgEurope/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AIBGalleryid": {}
+                        "/subscriptions/<subscription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<AIBGalleryid>": {}
                             
                     }
                     },
@@ -134,7 +134,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/<subscription_id>/resourceGroups/wvdImageDemoRgEurope/providers/Microsoft.Compute/galleries/My_Gallery/images/Virtual_Desktop",
+                    "galleryImageId": "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Compute/galleries/<GalleryName>/images/<imageDef>",
                     "runOutputName": "sigOutput",
                     "artifactTags": {
                         "source": "wvd11",
