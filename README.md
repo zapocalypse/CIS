@@ -6,4 +6,4 @@ For example between 180 and 365 days, 180 days is configured as the default valu
 For Not fewer than 10 days, 10 days is configured as the default value.
 For not longer than 15 days, 15 days is configured as the default value. 
 
-### Please notice that this project is for an internship project. Review this repro before using it! ###
+### Please notice that this project is for an internship project. Review this repo before using it! ###
